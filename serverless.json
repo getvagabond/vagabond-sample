@@ -1,0 +1,8 @@
+{
+  "name": "sample",
+  "domain": "sample",
+  "notificationEmail": "test@getvagabond.github.io",
+  "stage": "dev",
+  "region": "eu-west-1",
+  "profile" : "default"
+}
