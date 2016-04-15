@@ -1,0 +1,17 @@
+{
+  "name": "sample-ping",
+  "version": "0.0.1",
+  "description": "Simple ping module for sample",
+  "author": "me",
+  "license": "MIT",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/"
+  },
+  "keywords": [],
+  "devDependencies": {},
+  "dependencies": {
+    "serverless-helpers-js": "~0.2.1"
+  }
+}
