@@ -2,18 +2,11 @@ import {
   GraphQLObjectType,
   GraphQLSchema,
   GraphQLString,
-  GraphQLNonNull,
-  GraphQLInt,
-  GraphQLBoolean
+  GraphQLNonNull
 } from 'graphql';
 
-import {
-  GraphQLLimitedString,
-  GraphQLDateTime
-} from 'graphql-custom-types';
-
 import CarPark from './CarParkSchema';
-import { getCarPark, newCarPark } from './CarParkDynamo';
+import { getCarPark, newCarPark,  argsCarPark} from './CarParkDynamo';
 
 //vagabond-needle-import-entity-to-schema
 
@@ -42,13 +35,7 @@ const Mutuation = new GraphQLObjectType({
     newCarPark: {
       type: CarPark,
       description: 'Create a CarPark',
-      args: {
-        key: { type: GraphQLString },
-        name: { type: GraphQLString },
-        open: { type: GraphQLBoolean },
-        free: { type: GraphQLInt },
-        total: { type: GraphQLInt }
-      },
+      args: argsCarPark,
       resolve: newCarPark
     }
 

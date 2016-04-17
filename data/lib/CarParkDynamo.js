@@ -1,5 +1,17 @@
 import Promise from 'bluebird';
 import AWS from 'aws-sdk';
+import {
+  GraphQLString,
+  GraphQLInt,
+  GraphQLBoolean
+} from 'graphql';
+/*
+import {
+  GraphQLLimitedString,
+  GraphQLDateTime
+} from 'graphql-custom-types';
+*/
+
 const dynamoConfig = {
   sessionToken: process.env.AWS_SESSION_TOKEN,
   region: process.env.AWS_REGION
@@ -58,3 +70,11 @@ export function newCarPark(source, args) {
 
   });
 }
+
+export let argsCarPark = {
+  key: { type: GraphQLString },
+  name: { type: GraphQLString },
+  open: { type: GraphQLBoolean },
+  free: { type: GraphQLInt },
+  total: { type: GraphQLInt }
+};
